@@ -12,7 +12,7 @@ class App extends React.Component {
       <div className="catch-of-the-day">
         { /* Fish List component ? */ }
         <div className="menu">
-          <Header />
+          <Header tagline="Fresh Seafood Market"/>
         </div>
         <Order />
         <Inventory />
