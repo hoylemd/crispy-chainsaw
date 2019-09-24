@@ -4,7 +4,9 @@ import React from 'react';
 class Order extends React.Component {
   render() {
     return (
-      <p>Order component</p>
+      <div className="order">
+        Ordaaaahhhh!
+      </div>
     );
   }
 }

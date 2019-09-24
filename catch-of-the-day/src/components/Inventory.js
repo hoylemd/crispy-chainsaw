@@ -4,7 +4,9 @@ import React from 'react';
 class Inventory extends React.Component {
   render() {
     return (
-      <p>Inventory component</p>
+      <div className="inventory">
+        Inventory!
+      </div>
     );
   }
 }

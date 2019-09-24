@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 // component imports
 // import StorePicker from './components/StorePicker';
-import App from '.components/App';
+import App from './components/App';
 
 // style imports
 import './css/style.css';
