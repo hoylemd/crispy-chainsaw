@@ -10,7 +10,7 @@ const StorePicker = () => (
       placeholder="Store Name"
       defaultValue={getFunName()}
     />
-    <button type="submit">Go</button>
+    <button type="Visit Store">Go</button>
   </form>
 );
 
