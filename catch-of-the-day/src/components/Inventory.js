@@ -1,7 +1,6 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
 
-const Inventory = (props) => (
+const Inventory = () => (
   <div className="inventory">
     Inventory!
   </div>
