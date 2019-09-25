@@ -1,6 +1,6 @@
 # TODO List
 
-- [/] Routing
+- [x] Routing
 - [ ] fish list component
 - [ ] your order component
 - [ ] inventory component
@@ -8,4 +8,4 @@
 
 ## my own stuff
 
-- [ ] MakeComponent class vs sfc
+- [x] MakeComponent class vs sfc
