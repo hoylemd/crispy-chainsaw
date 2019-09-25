@@ -9,3 +9,4 @@
 ## my own stuff
 
 - [x] MakeComponent class vs sfc
+- [ ] localize templates
