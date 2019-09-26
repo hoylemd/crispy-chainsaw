@@ -14,6 +14,7 @@ class AddFishForm extends React.Component {
     };
 
     this.props.addFish(fish);
+    event.currentTarget.reset();
   }
 
   nameRef = React.createRef();
