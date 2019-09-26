@@ -4,10 +4,16 @@ import React from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
-  handleSubmit(event) {
+  myInput = React.createRef();
+
+  handleSubmit = (event) => {
     // stop the submittion request
     event.preventDefault();
-    alert('to the store!');
+
+    // get text
+    console.log(this.myInput.current.value);
+
+    // change page to /store/blah
   }
 
   render() {
@@ -15,6 +21,7 @@ class StorePicker extends React.Component {
       <form className="store-picker" onSubmit={this.handleSubmit}>
         <h2>Enter the name for your store</h2>
         <input type="text" required
+          ref={this.myInput}
           placeholder="Store Name"
           defaultValue={getFunName()}
         />
