@@ -30,11 +30,8 @@ class App extends React.Component {
   addToOrder = (fish_id) => {
     const order = {...this.state.order};
 
-    if (order[fish_id]) {
-      order[fish_id] += 1;
-    } else {
-      order[fish_id] = 1;
-    }
+    order[fish_id] = order[fish_id] + 1 || 1;
+
     this.setState({order: order});
   };
 
