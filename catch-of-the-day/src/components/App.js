@@ -27,6 +27,17 @@ class App extends React.Component {
     });
   };
 
+  addToOrder = (fish_id) => {
+    const order = {...this.state.order};
+
+    if (order[fish_id]) {
+      order[fish_id] += 1;
+    } else {
+      order[fish_id] = 1;
+    }
+    this.setState({order: order});
+  };
+
   render() {
     return (
       <div className="catch-of-the-day">
