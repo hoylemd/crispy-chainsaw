@@ -16,6 +16,34 @@ class App extends React.Component {
     order: {}
   };
 
+  componentDidMount() {
+    const { params } = this.props.match;
+
+    this.ref = base.syncState(
+      `${params.storeId}/fishes`,
+      {context: this, state: 'fishes'}
+    );
+
+    // reload local order
+    const order_string = localStorage.getItem(params.storeId);
+
+    if (order_string) {
+      this.setState({order: JSON.parse(order_string)});
+    }
+  };
+
+  componentDidUpdate() {
+    const order = JSON.stringify(this.state.order);
+
+    localStorage.setItem(this.props.match.params.storeId, order);
+    console.log(order);
+  };
+
+  componentWillUnmount() {
+    // Disconnect from firebase
+    base.removeBinding(this.ref);
+  };
+
   addFish = (fish) => {
     const fishes = {...this.state.fishes};
     fishes[`fish${Date.now()}`] = fish;
@@ -36,18 +64,6 @@ class App extends React.Component {
     this.setState({order: order});
   };
 
-  componentDidMount() {
-    const { params } = this.props.match;
-    this.ref = base.syncState(
-      `${params.storeId}/fishes`,
-      {context: this, state: 'fishes'}
-    );
-  };
-
-  componentWillUnmount() {
-    // Disconnect from firebase
-    base.removeBinding(this.ref);
-  };
 
   render() {
     const fish_list = Object.keys(this.state.fishes).map(key =>
