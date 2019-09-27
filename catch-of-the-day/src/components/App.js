@@ -8,6 +8,7 @@ import Inventory from './Inventory';
 import Fish from './Fish';
 
 import sampleFishes from '../sample-fishes';
+import base from '../base';
 
 class App extends React.Component {
   state = {
@@ -33,6 +34,19 @@ class App extends React.Component {
     order[fish_id] = order[fish_id] + 1 || 1;
 
     this.setState({order: order});
+  };
+
+  componentDidMount() {
+    const { params } = this.props.match;
+    this.ref = base.syncState(
+      `${params.storeId}/fishes`,
+      {context: this, state: 'fishes'}
+    );
+  };
+
+  componentWillUnmount() {
+    // Disconnect from firebase
+    base.removeBinding(this.ref);
   };
 
   render() {
