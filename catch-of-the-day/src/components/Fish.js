@@ -20,7 +20,10 @@ class Fish extends React.Component {
         <p className="desc">
           {desc}
         </p>
-        <button disabled={!is_available}>
+        <button
+          disabled={!is_available}
+          onClick={() => this.props.addToOrder(this.props.i8r)}
+        >
           {is_available ? 'Add to Cart' : 'Sold Out!'}
         </button>
       </li>
