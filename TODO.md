@@ -1,13 +1,15 @@
 # TODO List
 
 - [x] Routing
-- [ ] fish list component
-- [/] your order component
+- [x] fish list component
+- [x] your order component
 - [x] inventory component
-- [ ] PropTypes
+- [x] PropTypes
 
 ## my own stuff
 
 - [x] MakeComponent class vs sfc
 - [x] localize templates
 - [x] reverse MakeComponent type polarity
+- [ ] credentials to env
+- [ ] cra eject
