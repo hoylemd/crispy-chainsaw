@@ -1,7 +1,14 @@
+// library imports
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class EditFishForm extends React.Component {
+  static propTypes = {
+    fish: PropTypes.object,
+    i8r: PropTypes.string,
+    updateFish: PropTypes.func
+  }
+
   handleChange = (event) => {
     const input = event.currentTarget;
 

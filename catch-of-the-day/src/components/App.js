@@ -1,5 +1,6 @@
+// library imports
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 // component imports
 import Header from './Header';
@@ -7,14 +8,19 @@ import Order from './Order';
 import Inventory from './Inventory';
 import Fish from './Fish';
 
+// other local imports
 import sampleFishes from '../sample-fishes';
 import base from '../base';
 
 class App extends React.Component {
+  static propTypes = {
+    match: PropTypes.object
+  }
+
   state = {
     fishes: {},
     order: {}
-  };
+  }
 
   componentDidMount() {
     const { params } = this.props.match;
@@ -30,25 +36,25 @@ class App extends React.Component {
     if (order_string) {
       this.setState({order: JSON.parse(order_string)});
     }
-  };
+  }
 
   componentDidUpdate() {
     const order = JSON.stringify(this.state.order);
 
     localStorage.setItem(this.props.match.params.storeId, order);
     console.log(order);
-  };
+  }
 
   componentWillUnmount() {
     // Disconnect from firebase
     base.removeBinding(this.ref);
-  };
+  }
 
   addFish = (fish) => {
     const fishes = {...this.state.fishes};
     fishes[`fish${Date.now()}`] = fish;
     this.setState({fishes: fishes});
-  };
+  }
 
   updateFish = (key, fish) => {
     const fishes = { ...this.state.fishes };
@@ -60,7 +66,7 @@ class App extends React.Component {
     this.setState({
       fishes: sampleFishes
     });
-  };
+  }
 
   addToOrder = (fish_id) => {
     const order = {...this.state.order};
@@ -68,7 +74,7 @@ class App extends React.Component {
     order[fish_id] = order[fish_id] + 1 || 1;
 
     this.setState({order: order});
-  };
+  }
 
 
   render() {
@@ -79,7 +85,7 @@ class App extends React.Component {
         details={this.state.fishes[key]}
         addToOrder={this.addToOrder}
       />
-    )
+    );
 
     return (
       <div className="catch-of-the-day">
@@ -101,8 +107,5 @@ class App extends React.Component {
     );
   }
 }
-App.propTypes = {
-
-};
 
 export default App;

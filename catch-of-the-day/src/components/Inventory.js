@@ -1,9 +1,18 @@
+// library imports
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AddFishForm from './AddFishForm';
 import EditFishForm from './EditFishForm';
 
 class Inventory extends React.Component {
+  static propTypes = {
+    fishes: PropTypes.object,
+    updateFish: PropTypes.func,
+    addFish: PropTypes.func,
+    loadSampleFishes: PropTypes.func
+  }
+
   render () {
     const fish_keys = Object.keys(this.props.fishes);
     const fish_list = fish_keys.map(key => (

@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 // implicit return, stateless functonal component
 const Header = (props) => (
@@ -17,4 +17,7 @@ const Header = (props) => (
     </h3>
   </header>
 );
+Header.propTypes = {
+  tagline: PropTypes.string
+};
 export default Header;

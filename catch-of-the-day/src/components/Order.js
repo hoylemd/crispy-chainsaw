@@ -1,10 +1,16 @@
+// libary imports
 import React from 'react';
-//import PropTypes from 'prop-types';
-//
+import PropTypes from 'prop-types';
+
 // local imports
 import { formatPrice } from '../helpers';
 
 class Order extends React.Component {
+  static propTypes = {
+    fishes: PropTypes.object,
+    order: PropTypes.object
+  }
+
   renderOrder = (key) => {
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
@@ -24,7 +30,7 @@ class Order extends React.Component {
       <li key={key}>
         Sorry, {fish ? fish.name : 'fish'} is no longer available.
       </li>
-    )
+    );
   }
   render () {
     const order_keys = Object.keys(this.props.order);

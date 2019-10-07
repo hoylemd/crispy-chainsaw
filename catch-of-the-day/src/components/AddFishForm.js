@@ -1,7 +1,12 @@
+// library imports
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class AddFishForm extends React.Component {
+  static propTypes = {
+    addFish: PropTypes.func
+  }
+
   onSubmit = (event) => {
     event.preventDefault();
 

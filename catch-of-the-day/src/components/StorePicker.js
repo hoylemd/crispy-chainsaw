@@ -1,9 +1,14 @@
+// library imports
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // local imports
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
+  static propTypes = {
+    history: PropTypes.array
+  }
   myInput = React.createRef();
 
   handleSubmit = (event) => {
