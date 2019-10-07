@@ -11,5 +11,5 @@
 - [x] MakeComponent class vs sfc
 - [x] localize templates
 - [x] reverse MakeComponent type polarity
-- [ ] credentials to env
+- [x] credentials out of repo
 - [ ] cra eject
