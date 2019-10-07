@@ -12,4 +12,5 @@
 - [x] localize templates
 - [x] reverse MakeComponent type polarity
 - [x] credentials out of repo
-- [ ] cra eject
+- [x] cra eject
+- [ ] fix cra being a jerk
